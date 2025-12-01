@@ -123,11 +123,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Drinkitem.h" />
     <ClInclude Include="Fooditem.h" />
     <ClInclude Include="Menuitem.h" />
     <ClInclude Include="User.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Drinkitem.cpp" />
     <ClCompile Include="Fooditem.cpp" />
     <ClCompile Include="Menuitem.cpp" />
   </ItemGroup>
