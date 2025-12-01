@@ -131,6 +131,7 @@
   <ItemGroup>
     <ClCompile Include="source-files\Drinkitem.cpp" />
     <ClCompile Include="source-files\Fooditem.cpp" />
+    <ClCompile Include="source-files\main.cpp" />
     <ClCompile Include="source-files\Menuitem.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
