@@ -11,6 +11,7 @@ class Fooditem: public Menuitem {
 public:
 	Fooditem* next;
 	Fooditem();
+	Fooditem(const string& nam,const int& id);
 };
 
 class SinglyFoodList : public Fooditem{
@@ -19,6 +20,8 @@ public:
 	SinglyFoodList();
 	~SinglyFoodList();
 	bool empty() const;
-	void addFront(const double& prc, const string& nam, const int& id);
+	//void addFront(const double& prc, const string& nam, const int& id);
+	void insertOrdered(Fooditem* nFood,Fooditem* previousNode);
+	//insertOrdered(newNode, list.head); seklinde yollanmalý unutma
 	void removeOrdered(const int& id, const string& nam);
 };

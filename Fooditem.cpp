@@ -7,15 +7,17 @@ using namespace std;
 //Burada Fooditem ve singlyFoodList siniflarinin fonksiyon govdeleri olusturuldu.
 
 
-Fooditem::Fooditem(){
-	name = "yemek";
-	itemID = 0;
-	price = 0.00;
+Fooditem::Fooditem() {};
+
+Fooditem::Fooditem(const string& nam, const int& id){
+	name = nam;
+	itemID = id;
 }
 
 SinglyFoodList::SinglyFoodList() {
 	head = NULL;
 }
+
 SinglyFoodList::~SinglyFoodList(){}
 
 bool SinglyFoodList::empty()const {
@@ -36,26 +38,43 @@ void SinglyFoodList::removeOrdered(const int& id,const string& nam){
 		return;
 	}
 	
-	Fooditem* previous = head;
-	while (previous->next != NULL)
+	Fooditem* previousNode = head;
+	while (previousNode->next != NULL)
 	{
-		if ((name.compare(previous->next->getName()) == 0) && (previous->next->getID() == id))
+		if ((name.compare(previousNode->next->getName()) == 0) && (previousNode->next->getID() == id))
 		{
-			Fooditem* temp = previous->next;
-			previous->next = previous->next->next;
+			Fooditem* temp = previousNode->next;
+			previousNode->next = previousNode->next->next;
 			delete temp;
 			return;
 		}
-		previous = previous->next;
+		previousNode = previousNode->next;
 	}
-	cout << "\n" << id << "\n" << nam << " Aradiginiz yemek menude bulunmamaktadir!" << endl;
+	cout << "\n" << id << "\n" << nam << " Silmek istediginiz yemek menude bulunmamaktadir!" << endl;
 }
 
-void SinglyFoodList::addFront(const double& prc,const string& nam, const int& id){
-	Fooditem* nFood = new Fooditem;							
-	nFood->setName(nam);
-	nFood->setItemID(id);
-	nFood->setPrice(prc);
-	nFood->next = head;								
-	head = nFood;
+void SinglyFoodList::insertOrdered(Fooditem* nFood,Fooditem* previousNode) {
+
+	if (previousNode->next == NULL || nFood->getID() <= previousNode->next->getID())
+	{
+		nFood->next = previousNode->next;
+		previousNode->next = nFood;
+		return;
+	}
+	SinglyFoodList::insertOrdered(nFood,previousNode->next);
 }
+//insertOrdered(newNode, list.head); seklinde yollanmalý unutma
+
+
+
+
+
+
+//void SinglyFoodList::addFront(const double& prc,const string& nam, const int& id){
+//	Fooditem* nFood = new Fooditem;							
+//	nFood->setName(nam);
+//	nFood->setItemID(id);
+//	nFood->setPrice(prc);
+//	nFood->next = head;								
+//	head = nFood;
+//}
