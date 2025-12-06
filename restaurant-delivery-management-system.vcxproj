@@ -123,16 +123,21 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="source-files\customer.h" />
     <ClInclude Include="source-files\Drinkitem.h" />
+    <ClInclude Include="source-files\employee.h" />
     <ClInclude Include="source-files\Fooditem.h" />
     <ClInclude Include="source-files\Menuitem.h" />
-    <ClInclude Include="source-files\User.h" />
+    <ClInclude Include="source-files\user.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="source-files\customer.cpp" />
     <ClCompile Include="source-files\Drinkitem.cpp" />
+    <ClCompile Include="source-files\employee.cpp" />
     <ClCompile Include="source-files\Fooditem.cpp" />
     <ClCompile Include="source-files\main.cpp" />
     <ClCompile Include="source-files\Menuitem.cpp" />
+    <ClCompile Include="source-files\user.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
