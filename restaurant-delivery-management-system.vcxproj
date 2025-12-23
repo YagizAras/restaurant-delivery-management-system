@@ -123,21 +123,29 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="source-files\customer.h" />
+    <ClInclude Include="source-files\Customer.h" />
+    <ClInclude Include="source-files\DeliveryPerson.h" />
     <ClInclude Include="source-files\Drinkitem.h" />
-    <ClInclude Include="source-files\employee.h" />
+    <ClInclude Include="source-files\Employee.h" />
     <ClInclude Include="source-files\Fooditem.h" />
+    <ClInclude Include="source-files\Manager.h" />
     <ClInclude Include="source-files\Menuitem.h" />
-    <ClInclude Include="source-files\user.h" />
+    <ClInclude Include="source-files\Order.h" />
+    <ClInclude Include="source-files\Restaurant.h" />
+    <ClInclude Include="source-files\User.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="source-files\customer.cpp" />
+    <ClCompile Include="source-files\Customer.cpp" />
+    <ClCompile Include="source-files\DeliveryPerson.cpp" />
     <ClCompile Include="source-files\Drinkitem.cpp" />
-    <ClCompile Include="source-files\employee.cpp" />
+    <ClCompile Include="source-files\Employee.cpp" />
     <ClCompile Include="source-files\Fooditem.cpp" />
     <ClCompile Include="source-files\main.cpp" />
+    <ClCompile Include="source-files\Manager.cpp" />
     <ClCompile Include="source-files\Menuitem.cpp" />
-    <ClCompile Include="source-files\user.cpp" />
+    <ClCompile Include="source-files\Order.cpp" />
+    <ClCompile Include="source-files\Restaurant.cpp" />
+    <ClCompile Include="source-files\User.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -1,41 +1,46 @@
 #include <iostream>
-#include "user.h"
 #include <string.h>
+#include "User.h"
+using namespace std;
 
 
-user::user(const int* userNo, const char* userName, const char* userEmail){
-    userID = new int (*userNo);
-
-    size_t nameLength = strlen(userName) + 1;
-    name = new char[nameLength];
-    strcpy (name, userName);
-
-    size_t emailLength = strlen(userEmail) + 1;
-    email = new char[emailLength];
-    strcpy (email, userEmail);
+User::User() {
+	userID = 0;
+	userName = "John Doe";
+	userEmail = "john.doe@gmail.com";
 }
 
-user::~user(){
-    delete userID;
-    delete[] name;
-    delete[] email;
+User::~User(){
+	
+}
+User::User(int newUserId, string newUserName, string newUserEmail) {
+	this->setUserID(newUserId);
+	this->setUserName(newUserName);
+	this->setUserEmail(newUserEmail);
 }
 
-void user::displayInfo() const {
-    printf("ID: %d\n", userID);
-    printf("Name: %s\n",name);
-    printf("Email: %s\n", email);
+void User::setUserName(const string& newUserName) {
+	userName = newUserName;
+}
+void User::setUserEmail(const string& newUserEmail) {
+	userEmail = newUserEmail;
+}
+void User:: setUserID(const int& newUserId){
+	userID = newUserId;
 }
 
-
-const int* user::getuserID() const {
-    return userID;
+int User::getUserID() const{
+	return userID;
 }
-
-const char* user::getname() const {
-    return name;
+string User::getUserName() const {
+	return userName;
 }
-
-const char* user::getemail() const{
-    return email;
+string User::getUserEmail() const{
+	return userEmail;
+}
+void User::displayInfo(){
+	cout << "Kullanici bilgileri: " << endl
+		<< "ID: " << getUserID() << endl
+		<< "Name: " << getUserName() << endl
+		<< "Email: " << getUserEmail() << endl;
 }

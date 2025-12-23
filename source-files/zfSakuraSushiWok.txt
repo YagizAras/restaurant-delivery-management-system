@@ -1,0 +1,5 @@
+301 F 280 Spicy Tuna Roll
+302 F 250.5 Chicken Teriyaki
+303 F 80 Miso Soup
+304 D 40 Green Tea
+305 D 50 Jasmine Iced Tea

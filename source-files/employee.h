@@ -1,14 +1,13 @@
-#ifndef EMPLOYEE_H
-#define EMPLOYEE_H
-#include "user.h"
+#pragma once
+#include "User.h"
+#include <string>
+using namespace std;
 
-class employee : public user {
+
+class Employee : public User {
 public:
-    employee(const int* userNo, const char* userName, const char* userEmail);
-    ~employee();
+	Employee(int newUserId, string newUserName, string newUserEmail);
+	~Employee();
 
-    void displayInfo() const override;
-    
+	void displayInfo()override = 0;
 };
-
-#endif

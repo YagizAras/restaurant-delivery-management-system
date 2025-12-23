@@ -1,25 +1,27 @@
-#ifndef USER_H_INCLUDED
-#define USER_H_INCLUDED
+#pragma once
+#include <string>
+using namespace std;
 
-class user {
-private:
-    int* userID;
-    char* email;
 
-protected: 
-    char* name;
-
+class User {
 public:
-    user(const int* userNo, const char* userName, const char* userEmail);
+	
+    User();
+    User(int newUserId, string newUserName, string newUserEmail);
+    virtual ~User();
     
-    const int* getuserID() const;
-    const char* getname() const;
-    const char* getemail() const;
+    int getUserID()const;
+    string getUserName()const;
+    string getUserEmail()const;
+	void setUserID(const int& newUserId);
+	void setUserName(const string& newUserName);
+	void setUserEmail(const string& newUserEmail);
 
-    virtual void displayInfo() const = 0;
-    virtual ~user();
+    virtual void displayInfo();
+
+private:
+    int userID;
+    string userName;
+    string userEmail;
 
 };
-
-
-#endif 

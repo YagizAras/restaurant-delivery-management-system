@@ -4,77 +4,26 @@
 
 using namespace std;
 
-//Burada Drinkitem ve SinglyDrinkList siniflarinin fonksiyon govdeleri olusturuldu.
 
-
-Drinkitem::Drinkitem() {};
-
-Drinkitem::Drinkitem(const string& nam, const int& id) {
-	name = nam;
-	itemID = id;
+Drinkitem::Drinkitem(){
+	setItemID(0);
+	setItemName("Drink");
+	setItemPrice(0);
+	setItemType('D');
 }
 
-SinglyDrinkList::SinglyDrinkList() {
-	head = NULL;
+Drinkitem::Drinkitem(int newItemId, string newItemName,  double newItemPrice, char newItemType){
+	setItemID(newItemId);
+	setItemName(newItemName);
+	setItemPrice(newItemPrice);
+	setItemType(newItemType);
 }
 
-SinglyDrinkList::~SinglyDrinkList() {}
+Drinkitem::~Drinkitem() {}
 
-bool SinglyDrinkList::empty()const {
-	return head == NULL;
+void Drinkitem::showItem() {
+	cout << "Item ID: " << getItemID() << "Item name: " << getItemName()<< "Item price: " << getItemPrice() << endl;
 }
-void SinglyDrinkList::removeOrdered(const int& id, const string& nam) {
-	if (empty())
-	{
-		cout << "Menude icecek bulunmamaktadýr!";
-		return;
-	}
-
-	if ((nam.compare(head->getName()) == 0) && (head->getID() == id))
-	{
-		Drinkitem* temp = head;
-		head = head->next;
-		delete temp;
-		return;
-	}
-
-	Drinkitem* previousNode = head;
-	while (previousNode->next != NULL)
-	{
-		if ((name.compare(previousNode->next->getName()) == 0) && (previousNode->next->getID() == id))
-		{
-			Drinkitem* temp = previousNode->next;
-			previousNode->next = previousNode->next->next;
-			delete temp;
-			return;
-		}
-		previousNode = previousNode->next;
-	}
-	cout << "\n" << id << "\n" << nam << " Silmek istediginiz icecek menude bulunmamaktadir!" << endl;
+double Drinkitem::calculateDiscount() {
+	return (getItemPrice() - (getItemPrice() * 0.05) );
 }
-
-void SinglyDrinkList::insertOrdered(Drinkitem* nDrink, Drinkitem* previousNode) {
-
-	if (previousNode->next == NULL || nDrink->getID() <= previousNode->next->getID())
-	{
-		nDrink->next = previousNode->next;
-		previousNode->next = nDrink;
-		return;
-	}
-	SinglyDrinkList::insertOrdered(nDrink, previousNode->next);
-}
-//insertOrdered(newNode, list.head); seklinde yollanmalý unutma
-
-
-
-
-
-
-//void SinglyDrinkList::addFront(const double& prc,const string& nam, const int& id){
-//	Drinkitem* nDrink = new Drinkitem;							
-//	nDrink->setName(nam);
-//	nDrink->setItemID(id);
-//	nDrink->setPrice(prc);
-//	nDrink->next = head;								
-//	head = nDrink;
-//}

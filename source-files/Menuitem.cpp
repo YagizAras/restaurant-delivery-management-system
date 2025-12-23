@@ -5,18 +5,32 @@
 //Burada Menu item icerisindeki fonksiyonlarý setliyoruz.
 //Deðiþkenlere direkt ulasamadigimiz icin degiskenleri get ve set ile manipule ediyoruz.
 
-void Menuitem::setName(const string& nam) {
-	name = nam;
+Menuitem::Menuitem() {}
+
+Menuitem::~Menuitem(){}
+
+
+void Menuitem::setItemName(const string& newItemName) {
+	itemName = newItemName;
 }
-void Menuitem::setItemID(const int& id) {
-	itemID = id;
+void Menuitem::setItemID(const int& newItemId) {
+	itemID = newItemId;
 }
-void Menuitem::setPrice(const double& prc) {
-	price = prc;
+void Menuitem::setItemPrice(const double& newItemPrice) {
+	itemPrice = newItemPrice;
 }
-string Menuitem::getName(){
-	return name;
+void Menuitem::setItemType(const char& newItemType) {
+	itemType = newItemType;
 }
-int Menuitem::getID(){
+string Menuitem::getItemName(){
+	return itemName;
+}
+int Menuitem::getItemID(){
 	return itemID;
+}
+double Menuitem::getItemPrice() {
+	return itemPrice;
+}
+char Menuitem::getItemType() {
+	return itemType;
 }

@@ -1,0 +1,5 @@
+101 F 150.50 Double Cheeseburger
+102 F 165.50 Crispy Onion Rings
+103 F 100.00 Buffalo Wings
+104 D 90.50 Vanilla Milkshake
+105 D 40.00 Ice Cold Cola

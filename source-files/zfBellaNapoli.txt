@@ -1,0 +1,5 @@
+201 F 220 Margherita Pizza
+202 F 240.5 Spaghetti Carbonara
+203 F 260 Mushroom Risotto
+204 D 60 Italian Espresso
+205 D 30 Sparkling Water

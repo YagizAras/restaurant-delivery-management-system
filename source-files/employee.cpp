@@ -1,15 +1,9 @@
 #include <iostream>
-#include "employee.h"
+#include "Employee.h"
 #include <string.h>
 
+Employee::Employee(int newUserId, string newUserName, string newUserEmail):User(newUserId, newUserName, newUserEmail){
 
-employee::employee(const int* userNo, const char* userName, const char* userEmail)
-                : user(userNo, userName, userEmail){
 }
 
-employee::~employee(){}
-
-void employee::displayInfo() const {
-    user::displayInfo();
-    
-}
+Employee::~Employee(){}

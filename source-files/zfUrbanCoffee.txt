@@ -1,0 +1,5 @@
+401 F 70.00 Blueberry Muffin
+402 F 150.50 Club Sandwich
+403 F 140.00 Caesar Salad
+404 D 85.50 Caramel Macchiato
+405 D 60.00 Fresh Orange Juice

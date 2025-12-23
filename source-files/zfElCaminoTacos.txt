@@ -1,0 +1,6 @@
+501 F 200 Beef Burrito
+502 F 190.5 Chicken Quesadilla
+503 F 160 Nachos Supreme
+504 D 50 Homemade Lemonade
+505 D 55 Horchata
+238 D 329 yagiz

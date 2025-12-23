@@ -1,29 +1,36 @@
-#ifndef CUSTOMER_H
-#define CUSTOMER_H
-#include "user.h"
+#pragma once
 
-//ordera da bağlı
+#include <string>
+#include "User.h"
+#include "Restaurant.h"
+#include "Order.h"
 
-class customer : public user {
-private: //protected?
-    char* address;
-    char* orders[];
+using namespace std;
+
+class Customer : public User {
 
 public:
-    customer(const int* userNo,const char* userName, const char* userEmail, const char* userAddress);
-    ~customer();
-    
-    const char* getaddress() const;
-    /*
-    void set(const char* newAddress){
-        address = newAddress;
-    }      */
+    Customer(int newUserID, string newUserName, string newUserEmail, string newCustomerAddress);
+    ~Customer();
 
-    void displayInfo() const override;
-    //kopyalicak mı
+
+    void extendOrderList();
+    void addNewOrder(int menuID,Menuitem** restaurantMenu);
+
+
+	Order** getOrderList();
+    
+	int getCurrentOrderSize() const;
+    string getCustomerAddress();
+    void setCustomerAddress(const string& newCustomerAddress);
+    void displayInfo() override;
+
+private:
+    Order** orderList;
+	int orderCount, currentOrderSize;
+    string customerAddress;
+	char isOrderContinue;
 };
 
-
-#endif
 
 

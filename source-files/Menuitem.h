@@ -2,21 +2,30 @@
 #include <iostream>
 #include <string>
 using namespace std;
-//Menuitem sanal sinifini burada tanimliyoruz.
-
 
 class Menuitem{
 protected:
 	int itemID;
-	string name;
-	double price;
+	string itemName;
+	double itemPrice;
+	char itemType;
+
+
 public:
-	//sinif'i sanal sinif yapmak icin oluþturulan virtual method
-	virtual ~Menuitem() = 0;
-	void setName(const string& nam);
-	void setItemID(const int& id);
-	void setPrice(const double& prc);
-	string getName();
-	int getID();
-	
+
+	virtual void showItem() = 0;
+	virtual double calculateDiscount() = 0;
+
+	Menuitem();
+	virtual ~Menuitem();
+
+	string getItemName();
+	int getItemID();
+	double getItemPrice();
+	char getItemType();
+
+	void setItemName(const string& newItemName);
+	void setItemID(const int& newItemId);
+	void setItemPrice(const double& newItemPrice);
+	void setItemType(const char& newItemType);
 };
